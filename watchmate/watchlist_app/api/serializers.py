@@ -9,3 +9,6 @@ class MovieSerializer(serializers.Serializer):
     
     def create(self, validated_data):
         return Movie.objects.create(**validated_data)
+    
+    def update(self, instance, validated_data):
+        pass
