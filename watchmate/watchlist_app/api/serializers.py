@@ -11,4 +11,8 @@ class MovieSerializer(serializers.Serializer):
         return Movie.objects.create(**validated_data)
     
     def update(self, instance, validated_data):
-        pass
+        instance.name = validated_data.get('name', instance.name)
+        instance.description = validated_data.get('description', instance.description)
+        instance.active = validated_data.get('active', instance.active)
+        instance.save()  # Model.save() saves instance to database
+        return(instance)
