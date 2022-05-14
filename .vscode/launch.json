@@ -8,14 +8,13 @@
             "name": "Python: Django",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}\\watchmate\\manage.py",
+            "program": "${workspaceFolder}\\manage.py",
             "args": [
                 "runserver",
                 "8000"
             ],
             "django": true,
             "justMyCode": true,
-            "cwd": "${fileDirname}"
         }
     ]
 }
