@@ -7,6 +7,21 @@ class MovieSerializer(serializers.Serializer):
     description = serializers.CharField()
     active = serializers.BooleanField()
     
+    def validate(self, data):
+        if data['name'] == data['description']:
+            raise serializers.ValidationError("name and description cannot be identical")
+        return data
+    
+    def validate_name(self, value):
+        if len(value)<2:
+            raise serializers.ValidationError("name is too short")
+        return value
+    
+    def validate_description(self, value):
+        if len(value)<2:
+            raise serializers.ValidationError("description is too short")
+        return value
+    
     def create(self, validated_data):
         return Movie.objects.create(**validated_data)
     

@@ -11,10 +11,11 @@
             "program": "${workspaceFolder}\\watchmate\\manage.py",
             "args": [
                 "runserver",
-                "9000"
+                "8000"
             ],
             "django": true,
-            "justMyCode": true
+            "justMyCode": true,
+            "cwd": "${fileDirname}"
         }
     ]
 }
